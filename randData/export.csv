@@ -1,0 +1,4 @@
+id,first_name,last_name,gender,email,date_of_birth,country_of_birth,car_id,id,make,model,price
+2,Annette,Bickerdike,Bigender,abickerdike1@cbc.ca,2020-04-03,China,1,1,Ford,Mustang,30475.20
+3,Dwain,Twidle,Non-binary,dtwidle2@oakley.com,2020-08-03,Indonesia,2,2,Ford,Mustang,19812.68
+1,Clyde,Mattevi,Genderfluid,,2020-05-14,Indonesia,,,,,
