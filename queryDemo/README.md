@@ -33,18 +33,18 @@ The name, description and price of each menuItem that appears on at least one bi
 attributes in the result  appear as theName, theDescription and thePrice. No duplicates 
 appear in the result.  
   
-### 4.3 Query 3
+### Query 3
 The custID and name for each customer who had at least two different visits that were between
 December 18, 2018 at 8am and December 21, 2018 at 11pm is found. No duplicates appear in the result.  
   
-### 4.4 Query 4
+### Query 4
 The billEntry table has attributes visitID, menuItemID and quantity. The totalItemCost of a billEntry
 (which is not an attribute) is the price of the billEntry’s menuItem multiplied by its quantity.
 For each billEntry, its visitID, menuItemID, the name of that menuItem, and the billEntry’s
 totalItemCost is output. The attributes in the result appear as visitID, menuItemID, menuItemName and
 totalItemCost. No duplicates appear in the result.  
   
-### 4.5 Query 5
+### Query 5
 For each visit in which all of the following are true:
 a) the cost is greater than or equal to two hundred. 
 b) the server for the visit has a status that is not NULL. 
