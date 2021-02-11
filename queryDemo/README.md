@@ -15,7 +15,9 @@ table that have exactly the same (non-NULL) values for all of those attributes (
 constraint).
 > In customer: the 2 attributes name and address  
 In menuItem: the attribute name  
-In visit: the 2 attributes custID and custArrive    
+In visit: the 2 attributes custID and custArrive  
+
+  
 For example, the third constraint says that there can’t be two rows in visit that have the same values for
 both custID and custArrive, if both custID and custArrive are not NULL. Think of this as saying that
 there can’t be two different visits by the same customer that have the same customer arrival timestamp
