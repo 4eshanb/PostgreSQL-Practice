@@ -52,7 +52,7 @@ serverID have their serverID field set to NULL.
 These commands are in foreign.sql   
 
 ## General Constraints
-1.In menuItem, price must be positive. The constraint is named positivePrice.  
+1. In menuItem, price must be positive. The constraint is named positivePrice.  
   
 
 2. In visit, custArrive must be less than or equal to custDepart.  
