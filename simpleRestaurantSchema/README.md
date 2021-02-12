@@ -68,8 +68,8 @@ Unit tests are important for verifying that constraints are working as you expec
 
 > For each of the 3 foreign key constraints, an INSERT command that violates the foreign key constraint (and elicits an error).  
 
-> For each of the 3 general constraints, 2 unit tests are written:
-o An UPDATE command that meets the constraint.
+> For each of the 3 general constraints, 2 unit tests are written:  
+o An UPDATE command that meets the constraint.  
 o An UPDATE command that violates the constraint (and elicits an error).  
-
+  
 These 9 unit tests, in the order given above, are in the file unittests.sql.
