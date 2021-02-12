@@ -73,3 +73,53 @@ Unit tests are important for verifying that constraints are working as you expec
  &ensp;An UPDATE command that violates the constraint (and elicits an error).  
   
 These 9 unit tests, in the order given above, are in the file unittests.sql.
+
+## Create a view
+Although the visit table has a cost field, there’s another way to calculate the cost of a visit. For each
+visitID, there may be billEntry tuples for that visitID. Each billEntry tuple has a quantity, and each billEntry
+tuple has a menuItemID that identifies a menuItem tuple that has a price. So the calculatedCost of a visit can be
+calculated by adding up price*quantity for all of the billEntry tuples for that visit.  
+  
+A view called costView is created that has 2 attributes, visitID and calculatedCost. This view has a tuple
+for each visitID that gives the calculated cost for that visitID. The view has no duplicates in it.
+A GROUP BY is needed in the view.  
+  
+What happens if there’s a visitID for which there are no billEntry tuples?    
+There still is a tuple for that visitID in the costView, and that tuple’s calculatedCost is 0.  
+  
+The script for creating the costView view is saved in a file called createview.sql.
+
+## Query view
+
+Let’s define a Frequent Customer to be a customer who visited at least 3 times. For some visits, the cost
+that appears in the visit table is not the same as the calculatedCost in the costView view. The visitID, customer name, cost and calculatedCost is output 
+for each visit that was made by a Frequent Customer in which the cost and calculatedCost are different. 
+In the result, the attributes appear as visitID, customerName, cost and calculatedCost. 
+No duplicates appear in the result.  
+  
+Before running this query, recreate the Lab3 schema once again using the create.sql script,
+and load the data using the script data.sql. That way, any changes done for previous
+parts of Lab3 (e.g., Unit Test) won’t affect the results of this query. Then the results of that query are wriiten in a
+comment.  
+  
+Commands that delete just the tuples that have the following primary keys from the billEntry table are written:
+• the tuple with visitID 10, menuItem 3  
+• the tuple with visitID 2, menuItem 1  
+  
+The “Incorrect Costs for Frequent Customers” query is ran once again after those deletions. The output of
+the query is written in a second comment. 
+  
+These commands are in the script named queryview.sql. 
+
+## Create an index
+Indexes are data structures used by the database to improve query performance. Locating all of tuples in the
+billEntry table for a particular menuItem might be slow if the database system has to search the entire billEntry
+table. To speed up that search, an index named LookUpBillItems is created over the menuItemID and quantity
+columns (in that order) of the billEntry table.  
+The command is saved in the file createindex.sql.  
+  
+Of course, one can run the same SQL statements whether or not this index exists; having indexes just changes
+the performance of SQL statements. But the index could make it faster to search for the billEntry entries in
+which a particular menuItem had been ordered with a quantity that was 3 or more.
+  
+This assignment was for cse 180 at UCSC with Professor Sheldon Finkelstein.
