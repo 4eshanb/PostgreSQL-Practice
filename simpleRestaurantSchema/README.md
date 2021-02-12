@@ -102,7 +102,7 @@ and load the data using the script data.sql. That way, any changes done for prev
 parts of Lab3 (e.g., Unit Test) won’t affect the results of this query. Then the results of that query are wriiten in a
 comment.  
   
-Commands that delete just the tuples that have the following primary keys from the billEntry table are written:
+Commands that delete just the tuples that have the following primary keys from the billEntry table are written:  
 • the tuple with visitID 10, menuItem 3  
 • the tuple with visitID 2, menuItem 1  
   
